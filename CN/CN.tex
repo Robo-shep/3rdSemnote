@@ -1,0 +1,212 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig,graphicx}
+\usepackage{multicol,pst-plot}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage{upgreek}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=1cm]{geometry}
+\usepackage{tcolorbox}
+\usepackage{import}
+\pagestyle{empty}
+\DeclareMathOperator{\tr}{Tr}
+\renewcommand{\sp}[1]{$${\begin{split}#1\end{split}}$$}
+
+\usepackage{lipsum}
+\usepackage{mdframed}
+\usepackage{listings}
+\usepackage{color}
+
+% Margins
+% \topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+ % The problem environment introduced.                                     
+\newenvironment{problem}[2][Problem]                                  
+        {\begin{tcolorbox}[colback=white,colframe=gray!50,title=#1 #2]}
+        {\end{tcolorbox}}
+        % {\begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+        % {\end{mdframed}}
+% Define solution environment
+\newenvironment{solution}                      
+        {\begin{mdframed}\textit{Solution:} \\}
+        {\end{mdframed}}
+% Define an environments for proofs
+\newenvironment{myproof} 
+        {\textit{Proof:}}                                   
+        {\begin{flushright} Q.E.D. \end{flushright}}
+% Define a theorem environment and a notation one too
+\newenvironment{mytheorem}                    
+        {\begin{mdframed}\textbf{Theorem:} \\}
+        {\end{mdframed}}
+\newenvironment{notation}                      
+        {\begin{mdframed}\textit{Notation:} \\}
+        {\end{mdframed}}
+% A new example wouldnt so any harm either...  
+\newenvironment{example}                             
+        {\textit{Example:}\\}
+	{}
+%I sholud be ashamed to forget the definition environment(He forgot this he dumb haha)
+\newenvironment{definition}
+	{\begin{mdframed}$\underline{\textit{Def}^\textit{n}:} $\\}
+	{\end{mdframed}}
+%Corollary envvvvvvvvv
+\newenvironment{corollary}
+	{\textbf{Corrolary:}\\}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  \Huge{Computer Networks Notes}\\
+  \vspace{0.25cm}
+  \small{Anant Srivastava}
+\end{center}
+
+\vspace{-1.75cm}
+
+\begin{flushright}
+  Instructor: \\ Mrs. Shubhani Agarwal
+\end{flushright}
+
+\vspace{-1.3cm}
+
+\begin{flushleft}
+  B.Tech. CSE
+\end{flushleft}
+
+\rule{15.5cm}{0.1mm}%{\linewidth}{0.1mm}
+
+% Optional TOC
+\tableofcontents
+\pagebreak
+
+%--Paper--
+
+\section{Computer Networks}
+
+\subsection{Data Communication:}
+
+the exchange of information between two devices via some form of transmission medium, such as wired cable. The 4 fundamental characteristics of this are:
+\begin{itemize}
+  \item Delivery
+  \item Accuracy
+  \item Time
+  \item Jitter (variation in packet delivery time)
+\end{itemize}
+
+\subsection{Components of data communication:}
+There are 5 components in data communication: 
+\begin{itemize}
+  \item Sender
+  \item Reciever
+  \item Message (the data to be transferred)
+  \item Transmission medium
+  \item Protocol(the rules and regulations to be send)
+\end{itemize}
+
+\subsection{Data representation:}
+how we can represent data. It represents in the form of text, numbers, image, audio and video.
+
+\subsection{Components of CN:}
+There are 5 types of data flow: 
+\begin{itemize}
+\item IP address
+  
+  The node address connected to a network for communication.
+\item Node 
+	
+  Connection point inside a network that can recieve or that can send or store data. 
+\item Router
+  
+  It is physical device that sends in datapackets between networks.
+\item Switch
+  
+  Device that connects other devices and manages node to node communication.
+  \begin{itemize}
+  \item 1.Circuit Switching 
+  \item 2.Message Switching
+  \item 3.Packet Switching
+  \end{itemize}
+\item Newtwork cable
+  \begin{itemize}
+  \item 1.Coaxial cable
+  \item 2.Twisted cable
+  \item 3.Optic fibre cable
+  \end{itemize} 
+\end{itemize}
+
+\subsection{Data flow:}
+There are 3 types of data flow: 
+\begin{itemize}
+\item Simplex
+ 	
+  One way: sender stays sender and reciever stays reciever. 
+	Unidirectional. 
+\item Half-Duplex
+	
+  The direction can be changed but at a time there can only be one directional travel.
+	Each station can both transmit and receive but not at the  same time. 
+\item Duplex
+	
+  Simultaneous Data transfer over both nodes. 
+	Both stations can transmit and receive simultaneously. 
+\end{itemize}
+
+\subsection{Goals of Computer Networks:}
+Network is a set of devices connected by communication links. A network must be able to meet a certain number of criteria. These are:
+\begin{itemize}
+  \item Resource Sharing
+  \item High Reliability
+  \item flexible access
+  \item Scalability
+  \item Network Performance
+  \item Saving Money
+\end{itemize}
+
+\subsection{Types of CN:}
+There are 3 types of data flow: 
+\begin{itemize}
+\item LAN(Local Area Network)
+ 	
+  It Connects over a short distance.
+\item MAN (Metropolitan area network)
+  
+ It is larger than then LAN but smaller than WAN.
+\item WAN(Wide Area Network)
+	
+  Connects computers over a Wide area. 
+\end{itemize}
+
+\subsection{OSI model}
+\begin{enumerate}
+  \item Physical layer\\
+    It is either Analog or Digital.\\
+    It is a kind of continuous wave form that changes over time. 
+    What matters in this is:
+    For Analog:
+    \begin{itemize}
+      \item Amplitude
+      \item Frequency
+      \item Phase
+    \end{itemize}
+    For Digital:
+    \begin{itemize}
+      \item Bitrate
+      \item Bit interval
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Layers of OSI model}
+
+\end{document}

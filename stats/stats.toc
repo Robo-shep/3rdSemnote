@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Measures of Central Tendency}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Mean}{2}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}Properties of Mean}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Median}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Mode}{4}{}%
+\contentsline {subsection}{\numberline {1.4}The interconnection between the measures of central tendency}{5}{}%
+\contentsline {subsection}{\numberline {1.5}Geometric and Harmonic mean}{5}{}%

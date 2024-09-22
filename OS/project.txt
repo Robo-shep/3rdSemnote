@@ -1,0 +1,4 @@
+Analyze the case study of Linux and Windows-OS in enterprise environments consider the following parameters performance , security , cost effectiveness , scalability , user friendliness , maintenance , software compatibility and customization how do these factors collectively influence the decision making process for businesses when selecting an operating system .
+
+-->
+

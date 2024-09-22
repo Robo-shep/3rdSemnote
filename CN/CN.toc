@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Computer Networks}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Data Communication:}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Components of data communication:}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Data representation:}{2}{}%
+\contentsline {subsection}{\numberline {1.4}Components of CN:}{2}{}%
+\contentsline {subsection}{\numberline {1.5}Data flow:}{3}{}%
+\contentsline {subsection}{\numberline {1.6}Goals of Computer Networks:}{3}{}%
+\contentsline {subsection}{\numberline {1.7}Types of CN:}{3}{}%
+\contentsline {subsection}{\numberline {1.8}OSI model}{4}{}%
+\contentsline {subsection}{\numberline {1.9}Layers of OSI model}{4}{}%

@@ -1,0 +1,316 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig,graphicx}
+\usepackage{multicol,pst-plot}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage{upgreek}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=1cm]{geometry}
+\usepackage{tcolorbox}
+\usepackage{import}
+\pagestyle{empty}
+\DeclareMathOperator{\tr}{Tr}
+\renewcommand{\sp}[1]{$${\begin{split}#1\end{split}}$$}
+
+\usepackage{lipsum}
+\usepackage{mdframed}
+\usepackage{listings}
+\usepackage{color}
+
+% Margins
+% \topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% \title{ Chemistry Notes}
+% \author{ Gurmukh Singh }
+% \date{\today}
+
+ % The problem environment introduced.                                     
+\newenvironment{problem}[2][Problem]                                  
+        {\begin{tcolorbox}[colback=white,colframe=gray!50,title=#1 #2]}
+        {\end{tcolorbox}}
+        % {\begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+        % {\end{mdframed}}
+% Define solution environment
+\newenvironment{solution}                      
+        {\begin{mdframed}\textit{Solution:} \\}
+        {\end{mdframed}}
+% Define an environments for proofs
+\newenvironment{myproof} 
+        {\textit{Proof:}}                                   
+        {\begin{flushright} Q.E.D. \end{flushright}}
+% Define a theorem environment and a notation one too
+\newenvironment{mytheorem}                    
+        {\begin{mdframed}\textbf{Theorem:} \\}
+        {\end{mdframed}}
+\newenvironment{notation}                      
+        {\begin{mdframed}\textit{Notation:} \\}
+        {\end{mdframed}}
+% A new example wouldnt so any harm either...  
+\newenvironment{example}                             
+        {\textit{Example:}\\}
+	{}
+%I sholud be ashamed to forget the definition environment
+\newenvironment{definition}
+	{\begin{mdframed}$\underline{\textit{Def}^\textit{n}:} $\\}
+	{\end{mdframed}}
+%Corollary envvvvvvvvv
+\newenvironment{corollary}
+	{\textbf{Corrolary:}\\}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+  \Huge{Statistics Notes}\\
+  \vspace{0.25cm}
+	\small{Anant Srivatsava}
+\end{center}
+
+\vspace{-1.75cm}
+
+\begin{flushright}
+  Instructor: \\ Mrs. Nancy
+\end{flushright}
+
+\vspace{-1.3cm}
+
+\begin{flushleft}
+  B.Tech. CSE
+\end{flushleft}
+
+\rule{15.5cm}{0.1mm}%{\linewidth}{0.1mm}
+
+% Optional TOC
+\tableofcontents
+\pagebreak
+
+%--Paper--
+
+\section{Measures of Central Tendency}
+\begin{enumerate}
+  \item Mean
+  \item Median
+  \item Mode
+\end{enumerate}
+
+\subsection{Mean}
+It is the ratio of sum of all the observations to the total number of observations.
+let $x_1, x_2, \dots, x_n$ be all the observations. then:
+\[
+  \overline{x} =\frac{\sum_{i=1}^n x_i}{n}
+\]
+
+\subsubsection{Properties of Mean}
+\begin{itemize}
+  \item The sum of deviation of observations from mean is always zero
+  \item the sum of square of deviations of observations is minimum as compared to any other measure.
+  \item suppose there are two sequences:
+    \[
+      \begin{tabular}{c|c|c}
+        & Series 1 & Series 2 \\ 
+        Number of observations & $n_1$ & $n_2$ \\ 
+        mean of the observations & $\overline{x}_1 $& $\overline{x}_2$
+      \end{tabular} 
+    \]
+    then
+    \[
+      \overline{x} = \frac{n_1x_1+n_2x_2}{n_1+n_2}
+    \]
+\end{itemize}
+
+\begin{problem}1
+  If there are 5 and 8 number of observations of 2 series with mean 15 and 18, find the combined mean
+\end{problem}
+
+\begin{solution}
+  We can get the solution by taking the weighted mean of the two sequences. \\ 
+  so the required mean is : 
+  \[
+    \frac{5 \times 15 + 8 \times 18}{5+8}
+  \]
+  \[
+    = \frac{75 + 144}{13}
+  \]
+  \[
+    = \frac{219}{13}
+  \]
+  \[
+    = 16.846154
+  \]
+\end{solution}
+
+\begin{problem}2
+  $$
+   \begin{tabular}{c c}
+     Class & frequency \\ 
+   0-10 & 3 \\ 
+   10-20 & 5\\ 
+   20-30 & 7\\ 
+   30-40 & 4\\ 
+   40-50 & 1\\ 
+   \end{tabular}
+  $$
+\end{problem}
+
+\begin{solution}
+  change of origin:
+  $$
+   \begin{tabular}{c c c c c }
+     Class & frequency & X & d=X-A & f$\cdot $d\\ 
+     0-10 & 3 & 5 & -20 &  \\ 
+     10-20 & 5 & 15 & -10  & \\ 
+     20-30 & 7 & 25 & 0 & \\ 
+     30-40 & 4 & 35 & 10 & \\ 
+     40-50 & 1 & 45 & 20 & \\ 
+   \end{tabular}
+  $$
+  \[
+    \overline{x} = A + \frac{\sum fd}{n}
+  \]
+
+  change of scale
+  $$
+   \begin{tabular}{c c c c c }
+     Class & frequency & X & d=X/n & f$\cdot $d\\ 
+     0-10 & 3 & 1 & -20 &  \\ 
+     10-20 & 5 & 3 & -10  & \\ 
+     20-30 & 7 & 5 & 0 & \\ 
+     30-40 & 4 & 7 & 10 & \\ 
+     40-50 & 1 & 9 & 20 & \\ 
+   \end{tabular}
+  $$
+  \[
+    \overline{x} = A + \frac{\sum fd}{n}
+  \]
+\end{solution}
+
+\subsection{Median}
+Steps to find Median in case of Discrete and continuous data:
+
+\begin{enumerate}
+  \item Arrangement of data
+  \item if $n$ is odd then the median is the $ \frac{n+1}{2}$th term
+  \item if $n$ is even then the median is the mean of the $\frac{n}{2}$th term and $\frac{n}{2}+1$th term
+\end{enumerate}
+\begin{problem}3
+   find the median for the data : 
+   \begin{enumerate}
+      \item 9,9,10,10,12,13,15
+      \item 9,9,10,10,12,13,14,15
+   \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \begin{enumerate}
+    \item 9,9,10,10,12,13,15 has 7 elements. Therefore our median will be the 4th term in the arranged order\\
+      $ \therefore Median = 10 $
+    \item 9,9,10,10,12,13,14,15 has 8 elements. Therefore our median will be the mean of the 4th and 5th terms. \\
+      $\therefore Median = \frac{10+12}{2}= 11$
+  \end{enumerate}
+\end{solution}
+
+\begin{problem} 4
+  Finding the median of discrete data. 
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      X & f & cf(cumulative frequency)\\
+      \hline
+      1 & 5 & 5\\ 
+      2 & 8 & 13\\ 
+      3 & 9 & 22\\ 
+      \textbf{4} & \textbf{12} & \textbf{34}\\ 
+      5 & 6 & 40\\ 
+      6 & 7 & 47\\ 
+      7 & 4 & 51\\ 
+      \hline
+      Total & 51 \\
+    \end{tabular}
+  \end{center}
+
+  find the value of $x$ which has cumulative frequency just greater than $\frac{n}{2}$
+\end{problem}
+
+In case of continuous data:
+\[
+  Median = l + \frac{\left( \frac{n}{2} - cf \right)h}{f}
+\]
+where cf is the cumulative frequency and f is the frequency of the chosen class, $h$ is the class size
+
+\subsection{Mode}
+The observation which occurs the most is called the mode of the data. \\
+In more general terms, the most probable observation in a dataset is the mode of the data. 
+
+\begin{problem}5
+  Find mode for the following data:
+  10,11,15,18,18,18,15,10,18,20
+\end{problem}
+
+\begin{problem}6
+  Find the mean, median and mode for the following data
+  \begin{center}
+    \begin{tabular}{c|c}
+      CI & f \\
+      \hline
+      0-10 & 3 \\
+      10-20 & 5 \\ 
+      20-30 & 7 \\ 
+      30-40 & 2\\ 
+      40-50 & 1 \\ 
+      \hline
+      Total & 51 \\
+    \end{tabular}
+  \end{center}
+\end{problem}
+\textbf{How to find the mode for continuous data}
+\begin{enumerate}
+  \item Find the modal class which is having the maximum frequency.
+  \item based on that input the values into the following formulae:
+    \[
+      mode = l + h \left( \frac{f_1 - f_2}{2f_1-f_0-f_2} \right)
+    \]
+\end{enumerate}
+\subsection{The interconnection between the measures of central tendency}
+\[
+  Mode = 3 Median - 2 Mean
+\]
+
+\subsection{Geometric and Harmonic mean}
+\begin{definition}
+   Geometric mean is defined as the $n$th root of the product of $n$ observations\\
+   Mathematically:
+   \[
+     GM = \sqrt[n]{\prod_{i=0}^n x_i}
+   \]
+\end{definition}
+
+\begin{problem}7
+   Find the Geometric Mean for the values 2,4,8
+\end{problem}
+
+\begin{definition}
+   Harmonic mean is defined as the reciprocal of arithemetic mean of the reciprocal of all the observations
+   \[
+      HM = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}
+   \]
+\end{definition}
+
+\begin{mytheorem}
+   The following inequality is always true:
+   \[
+      AM \geq GM \geq HM
+   \]
+\end{mytheorem}
+
+\end{document}
